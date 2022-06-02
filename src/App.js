@@ -151,20 +151,36 @@ const App = () => {
             let iconName;
             if (route.name === 'Screen_A') {
               iconName = 'meho';
+              size = focused ? 25 : 20;
+              color = focused ? '#f0f' : '#ccc';
             } else if (route.name === 'Screen_B') {
               iconName = 'meh';
+              color = focused ? '#f0f' : '#ccc';
+              size = focused ? 25 : 20;
             }
-            return <AntDesign name={iconName} />;
+            return <AntDesign name={iconName} color={color} size={size} />;
           },
-        })}>
+          tabBarActiveTintColor: '#f0f',
+          tabBarInactiveTintColor: '#555',
+          tabBarActiveBackgroundColor: '#fff',
+          tabBarInactiveBackgroundColor: '#888',
+          tabBarShowLabel: true,
+          tabBarLabelStyle: {fontSize: 14},
+        })}
+        tabBarOptions={{}}>
         <Tab.Screen
           name="Screen_A"
           component={ScreenA}
           options={{
             header: () => null,
+            tabBarBadge: 3,
           }}
         />
-        <Tab.Screen name="Screen_B" component={ScreenB} />
+        <Tab.Screen
+          name="Screen_B"
+          component={ScreenB}
+          initialParams={{ItemName: 'No name', ItemId: null}}
+        />
       </Tab.Navigator>
     </NavigationContainer>
   );

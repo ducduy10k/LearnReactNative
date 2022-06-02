@@ -42,3 +42,6 @@ testem.log
 Thumbs.db
 
 config/default.json
+android/app/build
+android/app/build/*
+android/app/build/**

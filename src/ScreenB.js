@@ -17,10 +17,12 @@ import {
 } from 'react-native';
 import Pressable from 'react-native/Libraries/Components/Pressable/Pressable';
 
-export function ScreenB({navigation}) {
+export function ScreenB({navigation, route}) {
+  const {ItemName, ItemId} = route.params;
   function gotoScreenA() {
     //navigation.navigate('Screen_A');
-    navigation.goBack();
+    // navigation.goBack();
+    navigation.setParams({ItemId: 14});
   }
   return (
     <View>
@@ -28,7 +30,8 @@ export function ScreenB({navigation}) {
       <Pressable
         onPress={gotoScreenA}
         styles={({pressed}) => ({backgroundColor: pressed ? '#ddd' : '#f0f0'})}>
-        <Text>Go to A</Text>
+        <Text>{ItemName}</Text>
+        <Text>Id: {ItemId}</Text>
       </Pressable>
     </View>
   );

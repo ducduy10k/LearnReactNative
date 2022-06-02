@@ -19,7 +19,12 @@ import Pressable from 'react-native/Libraries/Components/Pressable/Pressable';
 
 export function ScreenA({navigation}) {
   function gotoScreenB() {
+    // navigation.navigate('Screen_B', {
+    //   ItemName: 'Item from Screen A',
+    //   ItemId: 12,
+    // });
     navigation.navigate('Screen_B');
+
     // navigation.replace('Screen_B');
   }
 
