@@ -34,7 +34,7 @@ export function ScreenA({navigation}) {
       <Pressable
         onPress={gotoScreenB}
         styles={({pressed}) => ({backgroundColor: pressed ? '#ddd' : '#f0f0'})}>
-        <Text>Go to B</Text>
+        <Text style={styles.text}>Go to B</Text>
       </Pressable>
     </View>
   );
@@ -56,5 +56,10 @@ const styles = StyleSheet.create({
     height: 200,
     resizeMode: 'stretch',
     margin: 5,
+  },
+  text: {
+    fontSize: 30,
+    margin: 10,
+    fontFamily: 'DancingScript-Regular',
   },
 });
